@@ -1,9 +1,9 @@
-using System;
 #if UNITY_ANDROID
 using Unity.Notifications.Android;
 using UnityEngine.Android;
 #endif
 using UnityEngine;
+using System;
 
 public class AndroidNotificationsHandler : MonoBehaviour
 {
@@ -41,9 +41,10 @@ public class AndroidNotificationsHandler : MonoBehaviour
         {
             Title = "Enery Recharged!",
             Text = "Your enery is fully recharged, come back to play again!",
-            SmallIcon = "default",
-            LargeIcon = "default",
-            FireTime = dateTime
+            SmallIcon = "icon_0",
+            LargeIcon = "icon_1",
+            FireTime = dateTime,
+            ShouldAutoCancel = true
         };
 
         AndroidNotificationCenter.SendNotification(notification, CHANNEL_ID);
